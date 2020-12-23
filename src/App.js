@@ -1,25 +1,60 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from 'react';
+import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import StudentView from './components/StudentView';
+import Assignment from './components/Assignment';
+import NewAssignment from './components/NewAssignment';
+import Edit from './components/Edit';
+import { connect } from 'react-redux'
+import { currentUser } from './actions/auth'
+import { Route, Switch, withRouter } from 'react-router-dom'
+// import { connect } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
 
-export default App;
+//   componentDidMount(){
+//     const token = localStorage.getItem('my_app_token')
+
+//     if (!token){
+//         this.props.history.push('/login')
+//     } else {
+
+//       const reqObj = {
+//           method: 'GET',
+//           headers: {
+//               Authorization: `Bearer ${token}`
+//           }
+//       }
+
+//       fetch('http://localhost:3000/current_user', reqObj) 
+//       .then(resp => resp.json())
+//       .then(data => {    
+//            this.props.currentUser(data)
+//           })
+//     }
+// }
+
+  render(){
+    return (
+      <div className="App">
+        <Navbar icon="paint brush" title="Painterest" description="out app" />
+        <Switch>
+          <Route exact component={Dashboard} path='/dashboard'  />
+          <Route exact component={Login} path='/login'  />
+          <Route exact component={Home} path='/home'  />
+          <Route exact component={Assignment} path='/sections/:id'  />
+          <Route exact component={NewAssignment} path='/sections/:id/assignments/new'  />
+          <Route exact component={StudentView} path='/sections/:id/assignments/:id'  />
+          <Route exact component={Edit} path='/grades/:id/edit'  />
+        </Switch>
+      </div>
+    );
+  }
+  
+};
+
+export default connect(null, { currentUser }) (withRouter(App))
