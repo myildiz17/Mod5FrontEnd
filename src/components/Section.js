@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchTeachers } from '../actions/index.js'
 import { currentUser } from "../actions/auth";
+import { Table } from "react-bootstrap";
 
 
 
@@ -43,16 +44,18 @@ class Section extends React.Component {
     // const noteStyle = {border: '1px solid black', padding: '29%', margin: '15px 100px 15px 100px'}
 
     return (
-        <div>
-            <div >
-           
-                {/* <h4 class="text-justify"> {this.props.section.name}</h4> */}
-                <Link classname='item' to={`/sections/${this.props.section.id}`} > 
+        <Table responsive="md" bordered>
+          <tbody>
+            <tr>
+              <td class="tablerow">
+              <Link classname='item' to={`/sections/${this.props.section.id}`} > 
                   <button class="btn btn-outline-danger" >{this.props.section.name}</button>
                 </Link>
-                
-            </div>
-        </div>
+              </td>
+            </tr>
+          </tbody>  
+           
+        </Table>
     );
   }
 }

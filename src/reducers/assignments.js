@@ -19,6 +19,11 @@ export default function assignments(state = [], action) {
         
         return newAssignments;
 
+        case "DELETE_ASSIGNMENT":
+          // debugger
+        newAssignments = state.filter(a => a.id !== action.id)
+          return newAssignments;
+
         case "DELETE_GRADE":
           
           const assignmentId = parseInt(action.id[1]) 

@@ -36,3 +36,133 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  box-shadow: 0px 5px 5px #4a7fe9;
+  opacity: 0.9;
+  background: #fff;
+  margin-left: 0vw;
+  
+}
+
+.navbar .nav-item {
+  font-size: 1.4rem;
+  padding-right: 1.4rem;
+
+}
+
+.carousel-item {
+  height: 450px;
+}
+
+.carousel-image-1 {
+  background: url('./img/a.jpg');
+  background-size: cover;
+ 
+}
+
+.carousel-image-2 {
+  background: url('./img/b.jpg');
+  background-size: cover;
+}
+
+.carousel-image-3 {
+  background: url('./img/c.jpg');
+  background-size: cover;
+}
+
+/* .center-navbar {
+  width:30%;
+  margin-left: 35%;
+} */
+
+.card {
+  width:30%;
+  margin-left: 35%;
+  
+}
+
+#home-section {
+  background: url('./img/b.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 900px;
+}
+
+#edit-section {
+  background: url('./img/math5.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 900px;
+}
+
+#home-section .dark-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 900px;
+  background: rgba(248, 246, 246, 0.6);
+}
+
+#home-section .home-inner {
+  padding-top: 200px;
+}
+
+.resim {
+  padding-left: 200px;
+}
+
+.teacher {
+  padding-top: 70px;
+  /* box-shadow: 0px 5px 5px #4a7fe9; */
+  /* padding-left: -90px !important; */
+}
+
+
+.sections {
+  padding-top: 70px;
+  /* box-shadow: 0px 5px 5px #4a7fe9; */
+  /* padding-left: -90px !important; */
+}
+
+.tablerow{
+  text-align: left;;
+}
+
+.tablehead{
+  text-align: center;;
+}
+
+.tablehead{
+  text-align: center;
+}
+
+.tableaHeadAssignment{
+  background: rgba(187, 186, 186, 0.6);
+}
+
+.tablehead2{
+  text-align: center;
+  background: #FFFFFF;
+}
+
+.forms{
+  padding-top: 70px;
+  padding-left: 700px;
+  padding-right: 700px;
+
+}
+
+.edit-backg{
+  background: rgba(187, 186, 186, 0.6);
+  padding-bottom: 50px;
+}
+
+#welcome {
+  background: #dad8d6;
+}
+.cardd{
+  box-shadow: 0px 0px 1px #4a7fe9;
+}

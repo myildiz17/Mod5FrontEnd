@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { addAssignment } from '../actions/index.js'
 import { currentUser } from "../actions/auth";
-
+import { Form, Col } from "react-bootstrap";
 // import { updateAssignments } from '../actions/index.js'
 
 
@@ -116,15 +116,20 @@ class NewAssignment extends React.Component {
  render(){
     //  debugger
    return (
-       <div>
+       <header id="edit-section">
            
            {/* { this.state.id ?
             ( */}
-            <div style={{ width : 750, height : 950, marginLeft : 570, marginTop : 30 }}>
-                
-            <form class="input-group" onSubmit={this.handleSubmit}  >
-                <label for="name">Name: </label>
+            
+            <div class="edit-backg">
+               <div class="forms"> 
+            <form  onSubmit={this.handleSubmit} controlId="formGroupEmail" >
+                <Form.Row>
+                <Form.Label column="lg" lg={3}>Assignment: </Form.Label>
+                <Col>
                 <input class="form-control" type='text' name='name' onChange={this.handleChange} value={this.state.name} placeholder=""/>
+                </Col>
+                </Form.Row>
                 {/* <label for="name">Student Name: </label>
                 <input class="form-control" type='text' name='student_id' onChange={this.handleChange} value={this.state.studentFname} placeholder=""/>
                 <label for="name">Assignment Name: </label>
@@ -132,10 +137,11 @@ class NewAssignment extends React.Component {
                 <input className= "btn btn-sm btn-primary" type='submit' />
             </form>
             </div>
+            </div>
             {/* )
             :
             null}   */}
-       </div>
+       </header>
    )
  }
 }

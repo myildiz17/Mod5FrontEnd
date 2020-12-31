@@ -52,3 +52,11 @@ export const addAssignment = (newAssignment) => {
         newAssignment: newAssignment
     }
 }
+
+export const deleteAssignment = (id) => {
+    // debugger
+    return {
+        type: "DELETE_ASSIGNMENT",
+        id: id
+    }
+}

@@ -1,48 +1,83 @@
 import React from "react";
 import { connect } from "react-redux";
 import { currentUser } from "../actions/auth";
-import Carousel from "react-bootstrap/Carousel";
-import imga from "../img/new1.png";
-import imgb from "../img/new2.png";
-import imgc from "../img/yeni3.png";
 import imgd from "../img/welcome.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-class Home extends React.Component {
+class About extends React.Component {
   render() {
     console.log("hi");
 
     return (
       //
       <div>
-        <Carousel>
-          <Carousel.Item>
-            <img className="d-block w-100" src={imga} alt="First slide" />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={imgb} alt="Third slide" />
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="d-block w-100" src={imgc} alt="Third slide" />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+        <section id="contact" class="py-3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card-body">
+                  <h4>Get In Touch</h4>
+                  <p>
+                    {" "}
+                    Pleae visit the school for more information and open house
+                    dates
+                  </p>
+                  <h4>Address</h4>
+                  <p>255 Western Ave, Chicago IL</p>
+                  <h4>Email</h4>
+                  <p>info@horizonschool.org</p>
+                  <h4>Phone</h4>
+                  <p>(255) 444-4444</p>
+                </div>
+              </div>
 
+              <div class="col-md-8">
+                <div class="cardd p-4">
+                  <div class="card-body">
+                    <h3 class="text-center">Please fill out this form to contact us</h3>
+                    <hr></hr>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="First Name"></input>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Last Name"></input>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Email"></input>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Phone Number"></input>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <textarea class="form-control" placeholder="Message"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input type="submit" value="Submit" class="btn btn-outline-danger btn-block"></input>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Welcome */}
         <section id="welcome">
           <div class="container">
@@ -259,4 +294,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { currentUser })(Home);
+export default connect(mapStateToProps, { currentUser })(About);
