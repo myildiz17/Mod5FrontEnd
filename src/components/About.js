@@ -1,12 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
 import { currentUser } from "../actions/auth";
-import imgd from "../img/welcome.png";
+import person3 from "../img/person3.jpg";
+import person2 from "../img/person2.jpg";
+import person1 from "../img/person1.jpg";
+import person4 from "../img/person4.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import emailjs from "emailjs-com";
 
 class About extends React.Component {
+  sendEmail = (e) => {
+    e.preventDefault();
+// debugger
+    emailjs.sendForm('service_dqyips9', 'template_83udi88', e.target, 'user_m5Gk1KYwOLPEE4qKil1I2')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  };
+
   render() {
     console.log("hi");
 
@@ -17,12 +32,12 @@ class About extends React.Component {
           <div class="container">
             <div class="row">
               <div class="col-md-4">
-                <div class="card-body">
+                <div class="carddd">
                   <h4>Get In Touch</h4>
                   <p>
                     {" "}
                     Pleae visit the school for more information and open house
-                    dates
+                    dates. 
                   </p>
                   <h4>Address</h4>
                   <p>255 Western Ave, Chicago IL</p>
@@ -36,250 +51,136 @@ class About extends React.Component {
               <div class="col-md-8">
                 <div class="cardd p-4">
                   <div class="card-body">
-                    <h3 class="text-center">Please fill out this form to contact us</h3>
+                    <h3 class="text-center">
+                      Please fill out this form to contact us
+                    </h3>
                     <hr></hr>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="First Name"></input>
+                    {/* <div class="container">
+                      <form onSubmit={this.sendEmail}>
+                        <div class="col-md-6 form-group mx-auto">
+                          <input type="text" class="form-control" placeholder="Name" name="name"/>
+                        </div> 
+                        <div class="col-md-6 form-group mx-auto">
+                          <input type="text" class="form-control" placeholder="Email Address" name="email"/>
+                        </div> 
+                        <div class="col-md-6 form-group mx-auto">
+                          <input type="text" class="form-control" placeholder="Subject" name="subject"/>
+                        </div> 
+                        <div class="col-md-6 form-group mx-auto">
+                          <textarea  class="form-control" placeholder="Your message" name="message"></textarea>
+                        </div> 
+                        <div class="col-md-6 mx-auto">
+                          <input type="submit" class="btn btn-info" value="Send Message"></input>
+                        </div> 
+                      </form>
+                    </div> */}
+
+                    <form onSubmit={this.sendEmail}>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="First Name"
+                              name="name"
+                            ></input>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Last Name"
+                              name="lname"
+                            ></input>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Email"
+                              name="email"
+                            ></input>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Phone Number"
+                              name="phone"
+                            ></input>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Last Name"></input>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <textarea
+                              class="form-control"
+                              placeholder="Message"
+                              name="message"
+                            ></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="submit"
+                              value="Submit"
+                              class="btn btn-outline-danger btn-block"
+                            ></input>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Email"></input>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Phone Number"></input>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <textarea class="form-control" placeholder="Message"></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <input type="submit" value="Submit" class="btn btn-outline-danger btn-block"></input>
-                        </div>
-                      </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {/* Welcome */}
-        <section id="welcome">
+
+        {/* Staff */}
+        <section id="staff" class="py-5 text-center bg-dark text-white">
           <div class="container">
+            {/* <h1>Main Office</h1>
+            <hr></hr> */}
             <div class="row">
-              <div class="col text-center py-5">
-                <h1 class="display-4">Welcome to Horizon School</h1>
-                <p class="lead">
-                  kshfj kfhkshfj fhskfh kshfksjfks fksjf skfjskfj ksjfksjfk
-                  sjfsjfjsfkjskfjs fjs ksjsk d fdsjkfj skfh kshfksjfks fksjf
-                  skfjskfj ksjfksjfk sjfsjfjsfkjskfjs fjs ksjsk d fdsjkfj
-                </p>
+              <div class="col-md-3">
+                <img src={person3} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <h4>Tom Dee</h4>
+                <small>Director</small>
+                <hr></hr>
+                <small>dee@horizon.org</small>
               </div>
-            </div>
-          </div>
-        </section>
-        {/* //District */}
-        <section id="district" class="bg-light text-muted py-5">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <img
-                  src={imgd}
-                  alt=""
-                  class="img-fluid mb-3 rounded-circle"
-                ></img>
+              <div class="col-md-3">
+                <img src={person2} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <h4>Mary Lee</h4>
+                <small>Assistant Director</small>
+                <hr></hr>
+                <small>lee@horizon.org</small>
               </div>
-              <div class="col-md-6">
-                <h3>Explore & Connect</h3>
-                <p>
-                  Selam kelam rakadagga Selam kelam rakadagga Selam kelam
-                  rakadagga Selam kelam rakadagga Selam kelam rakadagga Selam
-                  kelam rakadagga Selam kelam rakadagga Selam kelam rakadagga
-                  Selam kelam rakadagga Selam kelam rakadagga Selam kelam
-                  rakadagga Selam kelam rakadagga Selam kelam rakadagga Selam
-                  kelam rakadagga Selam kelam rakadagga Selam kelam rakadagga
-                </p>
+              <div class="col-md-3">
+                <img src={person4} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <h4>Robert Hick</h4>
+                <small>Dean of Student</small>
+                <hr></hr>
+                <small>hick@horizon.org</small>
               </div>
-            </div>
-          </div>
-        </section>
-        {/* Photo gallary */}
-        <section id="gallery" class="py-5">
-          <div class="container">
-            <h1 class="text-center">Photo Galley</h1>
-            <p class="text-center">Check out our photos</p>
-            <div class="row mb-4">
-              <div class="col-md-4">
-                <a
-                  href="https://source.unsplash.com/random/560x560"
-                  data-toggle="lightbox"
-                  data-gallery="img-gallery"
-                  data-height="560"
-                  data-width="560"
-                >
-                  <img
-                    src="https://source.unsplash.com/random/560x560"
-                    alt=""
-                    class="img-fluid"
-                  ></img>
-                </a>
+              <div class="col-md-3">
+                <img src={person1} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <h4>Jone Globe</h4>
+                <small>Secretary</small>
+                <hr></hr>
+                <small>globe@horizon.org</small>
               </div>
 
-              <div class="col-md-4">
-                <a
-                  href="https://source.unsplash.com/random/561x561"
-                  data-toggle="lightbox"
-                  data-gallery="img-gallery"
-                  data-height="561"
-                  data-width="561"
-                >
-                  <img
-                    src="https://source.unsplash.com/random/561x561"
-                    alt=""
-                    class="img-fluid"
-                  ></img>
-                </a>
-              </div>
-
-              <div class="col-md-4">
-                <a
-                  href="https://source.unsplash.com/random/562x562"
-                  data-toggle="lightbox"
-                  data-gallery="img-gallery"
-                  data-height="562"
-                  data-width="562"
-                >
-                  <img
-                    src="https://source.unsplash.com/random/562x562"
-                    alt=""
-                    class="img-fluid"
-                  ></img>
-                </a>
-              </div>
-            </div>
-
-            <div class="row mb-4">
-              <div class="col-md-4">
-                <a
-                  href="https://source.unsplash.com/random/563x563"
-                  data-toggle="lightbox"
-                  data-gallery="img-gallery"
-                  data-height="563"
-                  data-width="563"
-                >
-                  <img
-                    src="https://source.unsplash.com/random/563x563"
-                    alt=""
-                    class="img-fluid"
-                  ></img>
-                </a>
-              </div>
-
-              <div class="col-md-4">
-                <a
-                  href="https://source.unsplash.com/random/564x564"
-                  data-toggle="lightbox"
-                  data-gallery="img-gallery"
-                  data-height="564"
-                  data-width="564"
-                >
-                  <img
-                    src="https://source.unsplash.com/random/564x564"
-                    alt=""
-                    class="img-fluid"
-                  ></img>
-                </a>
-              </div>
-
-              <div class="col-md-4">
-                <a
-                  href="https://source.unsplash.com/random/565x565"
-                  data-toggle="lightbox"
-                  data-gallery="img-gallery"
-                  data-height="565"
-                  data-width="565"
-                >
-                  <img
-                    src="https://source.unsplash.com/random/565x565"
-                    alt=""
-                    class="img-fluid"
-                  ></img>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Testimonials */}
-
-        <section id="testimonials" class="p-4 bg-dark text-white">
-          <div class="container">
-            <h2 class="text-center">Testimonials</h2>
-            <div class="row text-center">
-              <div class="col">
-                <div class="slider">
-                  <Slider
-                    dots={false}
-                    slidesToShow={1}
-                    slidesToScroll={1}
-                    autoplay={true}
-                    autoplaySpeed={4000}
-                  >
-                    <div>
-                      <blockquote class="blockquote">
-                        <p class="mb-0">
-                          Lorem selam kelam vs hepberanet gmbejdj
-                        </p>
-                        <footer class="blockquote-footer">
-                          {" "}
-                          Metin Yildiz
-                          <cite title="Parent 1">Parent 1</cite>
-                        </footer>
-                      </blockquote>
-                    </div>
-
-                    <div>
-                      <blockquote class="blockquote">
-                        <p class="mb-0">
-                          Lorem selam kelam vs hepberanet gmbejdj
-                        </p>
-                        <footer class="blockquote-footer">
-                          {" "}
-                          Cetin Yildiz
-                          <cite title="Parent 1">Parent 2</cite>
-                        </footer>
-                      </blockquote>
-                    </div>
-
-                    <div>
-                      <blockquote class="blockquote">
-                        <p class="mb-0">
-                          Lorem selam kelam vs hepberanet gmbejdj
-                        </p>
-                        <footer class="blockquote-footer">
-                          {" "}
-                          Kenan Yildiz
-                          <cite title="Parent 1">Parent 3</cite>
-                        </footer>
-                      </blockquote>
-                    </div>
-                  </Slider>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -287,6 +188,7 @@ class About extends React.Component {
     );
   }
 }
+
 
 const mapStateToProps = (state) => {
   return {

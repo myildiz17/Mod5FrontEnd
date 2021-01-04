@@ -57,7 +57,7 @@ class MyNavbar extends React.Component {
                     </Link>
                   ) : (
                     <Link className="nav-link" to="/login">
-                      Log In
+                      Grade Book
                     </Link>
                   )}
                 </li>

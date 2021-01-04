@@ -161,8 +161,44 @@
 }
 
 #welcome {
-  background: #dad8d6;
+  background: #f8e9d7;
 }
 .cardd{
   box-shadow: 0px 0px 1px #4a7fe9;
+  height: 400px;
+}
+
+.carddd{
+  box-shadow: 0px 0px 1px #4a7fe9;
+  height: 400px;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: left;
+}
+
+.card-body{
+ 
+  box-shadow: 0px 0px 1px #4a7fe9;
+  height: 350px;
+}
+
+.dist {
+  
+  
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: left;
+  height: 200px;
+  width: 50px;
+}
+
+.acc-card{
+  width: 850px;
+  height: 100px;
+  box-shadow: 0px 0px 1px #4a7fe9;
+  padding-top: 0px;
+  
+
 }

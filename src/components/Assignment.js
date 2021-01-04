@@ -32,20 +32,31 @@ class Assignment extends React.Component {
       fetch("http://localhost:3000/current_user", reqObj)
         .then((resp) => resp.json())
         .then((data) => {
+          console.log(data)
           this.props.currentUser(data);
         });
-
-      const allAssignment = this.props.assignments.filter(
-        (assignment) =>
-          assignment.section_id === parseInt(this.props.match.params.id)
-      );
-      // debugger
-      const sectName = allAssignment[1].section.name;
-      // const sectName = allAssignments[0]
-      this.setState({
-        section: sectName,
-      });
+        
+        fetch("http://localhost:3000/assignments")
+        .then((res) => res.json())
+        .then((assignments) => {
+          this.props.fetchAssignments(assignments);
+  
+          const allAssignment = this.props.assignments.filter(
+            (assignment) =>
+              assignment.section_id === parseInt(this.props.match.params.id)
+          );
+          // debugger
+          const sectName = allAssignment[1].section.name;
+          // const sectName = allAssignments[0]
+          this.setState({
+            section: sectName,
+          });
+          // debugger
+        });
+      
     }
+
+    
 
     // fetch("http://localhost:3000/assignments")
     //   .then((res) => res.json())

@@ -17,6 +17,7 @@ class StudentView extends React.Component {
     super();
     this.state = {
       aName: "",
+      loading: true
     };
   }
 
@@ -51,16 +52,20 @@ class StudentView extends React.Component {
       .then((res) => res.json())
       .then((assignments) => {
         this.props.fetchAssignments(assignments);
-      });
-
-      const assignmentId = parseInt(this.props.match.params.id);
-      const assignmentNeeded = this.props.assignments.find(
+        const assignmentId = parseInt(this.props.match.params.id);
+      const assignmentNeeded = assignments.find(
         (a) => a.id === assignmentId
       );
   
       this.setState({
-        aName: assignmentNeeded.name
+        aName: assignmentNeeded.name,
+        loading: false
+
+
       })
+      });
+
+      
   }
 
   renderGrades = () => {
@@ -143,6 +148,7 @@ class StudentView extends React.Component {
       <div class="container">
         <div class="row">
           <div class="col-md-3 teacher">
+           
             <Card style={{ width: "17rem", marginLeft: 0 }}>
               <Card.Img variant="top" src={imgc} />
               <Card.Body>
@@ -159,6 +165,8 @@ class StudentView extends React.Component {
             </Card>
           </div>
           <div class="col-md-9 sections">
+          {/* { this.state.loading ? <h4>loading ..</h4> 
+          :   */}
             <div>
               <Table>
                 <tr><strong>Assignment Name:  </strong> {this.state.aName}</tr>
@@ -183,6 +191,7 @@ class StudentView extends React.Component {
                 {this.props.auth ? this.rendersections() : null}
               </div> */}
             </div>
+            {/* // } */}
           </div>
         </div>
       </div>

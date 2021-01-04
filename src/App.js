@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import About from './components/About';
 import Dashboard from './components/Dashboard';
+import Gmap from './components/Gmap';
 import StudentView from './components/StudentView';
 import Assignment from './components/Assignment';
 import NewAssignment from './components/NewAssignment';
@@ -50,6 +51,7 @@ class App extends React.Component {
           <Route exact component={Home} path='/home'  />
           <Route exact component={Home} path='/'  />
           <Route exact component={About} path='/about'  />
+          <Route exact component={Gmap} path='/map'  />
           <Route exact component={Assignment} path='/sections/:id'  />
           <Route exact component={NewAssignment} path='/sections/:id/assignments/new'  />
           <Route exact component={StudentView} path='/sections/:id/assignments/:id'  />
