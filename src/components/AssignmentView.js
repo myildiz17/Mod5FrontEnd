@@ -6,7 +6,7 @@ import { deleteAssignment } from "../actions/index.js";
 
 class AssignmentView extends React.Component {
   componentDidMount() {
-    fetch("http://localhost:3000/assignments")
+    fetch("http://gradesbook.herokuapp.com/assignments")
       .then((res) => res.json())
       .then((assignments) => {
         this.props.fetchAssignments(assignments);
@@ -17,7 +17,7 @@ class AssignmentView extends React.Component {
   handleDelete = (id) => {
     // debugger
 
-    fetch(`http://localhost:3000/assignments/${id}`, { method: "DELETE" })
+    fetch(`http://gradesbook.herokuapp.com/assignments/${id}`, { method: "DELETE" })
       .then((res) => res.json())
       .then((assignment) => {
         // debugger

@@ -23,7 +23,7 @@ class Section extends React.Component {
             },
           };
     
-          fetch("http://localhost:3000/current_user", reqObj)
+          fetch("http://gradesbook.herokuapp.com/current_user", reqObj)
             .then((resp) => resp.json())
             .then((data) => {
             
@@ -32,7 +32,7 @@ class Section extends React.Component {
         }
 
 
-        fetch('http://localhost:3000/teachers')
+        fetch('http://gradesbook.herokuapp.com/teachers')
         .then(res => res.json())
         .then(teachers => {
             this.props.fetchTeachers(teachers)  

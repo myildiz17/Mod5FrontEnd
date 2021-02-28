@@ -34,21 +34,21 @@ class StudentView extends React.Component {
         },
       };
 
-      fetch("http://localhost:3000/current_user", reqObj)
+      fetch("http://gradesbook.herokuapp.com/current_user", reqObj)
         .then((resp) => resp.json())
         .then((data) => {
           this.props.currentUser(data);
         });
     }
 
-    fetch("http://localhost:3000/grades")
+    fetch("http://gradesbook.herokuapp.com/grades")
       .then((res) => res.json())
       .then((grades) => {
         this.props.fetchGrades(grades);
         // debugger
       });
 
-    fetch("http://localhost:3000/assignments")
+    fetch("http://gradesbook.herokuapp.com/assignments")
       .then((res) => res.json())
       .then((assignments) => {
         this.props.fetchAssignments(assignments);
@@ -132,7 +132,7 @@ class StudentView extends React.Component {
   handleDelete = (id) => {
     // debugger
 
-    fetch(`http://localhost:3000/grades/${id}`, { method: "DELETE" })
+    fetch(`http://gradesbook.herokuapp.com/grades/${id}`, { method: "DELETE" })
       .then((res) => res.json())
       .then((grade) => {
         // debugger

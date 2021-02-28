@@ -20,14 +20,14 @@ class Dashboard extends React.Component {
         },
       };
 
-      fetch("http://localhost:3000/current_user", reqObj)
+      fetch("http://gradesbook.herokuapp.com/current_user", reqObj)
         .then((resp) => resp.json())
         .then((data) => {
           this.props.currentUser(data);
         });
     }
 
-    fetch("http://localhost:3000/assignments")
+    fetch("http://gradesbook.herokuapp.com/assignments")
       .then((res) => res.json())
       .then((assignments) => {
         this.props.fetchAssignments(assignments);

@@ -31,7 +31,7 @@ class Edit extends React.Component {
         },
       };
 
-      fetch("http://localhost:3000/current_user", reqObj)
+      fetch("http://gradesbook.herokuapp.com/current_user", reqObj)
         .then((resp) => resp.json())
         .then((data) => {
           this.props.currentUser(data);
@@ -81,7 +81,7 @@ class Edit extends React.Component {
       ),
     };
 
-    fetch(`http://localhost:3000/grades/${this.props.match.params.id}`, reqObj)
+    fetch(`http://gradesbook.herokuapp.com/grades/${this.props.match.params.id}`, reqObj)
       .then((resp) => resp.json())
       .then((updatedGrade) => {
         //   debugger

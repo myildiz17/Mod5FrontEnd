@@ -30,7 +30,7 @@ class NewAssignment extends React.Component {
         },
       };
 
-      fetch("http://localhost:3000/current_user", reqObj)
+      fetch("http://gradesbook.herokuapp.com/current_user", reqObj)
         .then((resp) => resp.json())
         .then((data) => {
         
@@ -91,7 +91,7 @@ class NewAssignment extends React.Component {
       }
   
   
-      fetch(`http://localhost:3000/assignments`, reqObj)
+      fetch(`http://gradesbook.herokuapp.com/assignments`, reqObj)
       .then(resp => resp.json())
       .then(newAssignment => {
           // debugger
