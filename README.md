@@ -1,8 +1,8 @@
 # Gradebook
 ___
 
-* About The Project
-* Getting Started
+* [About The Project](#1)
+* [Getting Started](#2)
 * Prerequisites
 * Installation
 * Contributing
@@ -10,9 +10,9 @@ ___
 * Acknowledgements
 
 ---
+[link text](#abcd)
 
-
-### About the Project
+### About the Project 
 Gradebook isa school web site with an embedded database, where teachers can create assignments and enter grade for each student. 
 
 Backend is created with Ruby on Rails. Click here to see the backend. 
@@ -47,8 +47,8 @@ rails db:migrate<br/>
 
 --- 
 
-### Installation
-
+### Installation 
+<a name="1"></a>
 Create a folder and clone forntend and backend repos into it:<br/>
 
 git clone https://github.com/myildiz17/Mod5FrontEnd<br/>
@@ -66,7 +66,7 @@ npm install<br/>
 npm start<br/>
 
 ---
-
+<a name="2"></a>
 ### Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 
