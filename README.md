@@ -15,13 +15,13 @@ ___
 ### About the Project 
 Gradebook isa school web site with an embedded database, where teachers can create assignments and enter grade for each student. 
 
-Backend is created with Ruby on Rails. Click here to see the backend. 
+Backend is created with Ruby on Rails. Click to see the [backend](https://github.com/myildiz17/Mod5BackEnd). 
 
-Frontend is designed in JS React-Redux. 
+[Frontend](https://github.com/myildiz17/Mod5FrontEnd) is designed in JS React-Redux. 
 
-Watch the demo.
+Watch the [demo](https://youtu.be/-gECARO9lUU).
 
-Check the onlkine live site.
+Check the live [site](https://schoolgb.herokuapp.com/about).
 
 
 
