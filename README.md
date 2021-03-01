@@ -1,10 +1,6 @@
 # Nature Watch
 ___
 
-
-## Overview
----
-
 * About The Project
 * Getting Started
 * Prerequisites
@@ -16,7 +12,7 @@ ___
 ---
 
 
-### **About the Project**
+### About the Project
 Nature Watch is SPA that allows users to create entries of sightings of Flora and Fauna they have seen in nature. See the backend here. This is the React-Redux front end.
 
 Watch the demo here.
@@ -33,14 +29,18 @@ Github
 Ruby 2.6.1
 Rails 6.0.3
 React 17.0.1
-Prerequisites
+
+--- 
+### Prerequisites
 This is an example of what you you need to use the software and how to install them.
 bundle install
 rails console
 rails db:create
 rails db:migrate
 
-Installation
+--- 
+
+### Installation
 Make one folder and inside that folder clone both repos:
 git clone git@github.com:MMcClure11/sightings-client.git
 git clone git@github.com:MMcClure11/sightings-api.git
@@ -57,7 +57,10 @@ cd into nature-watch-client
 yarn install
 yarn start
 This will open in your browser.
-Contributing
+
+---
+
+### Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 Fork the Project
@@ -67,7 +70,10 @@ Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 Bug reports and pull requests are welcome on GitHub at https://github.com/MMcClure11/nature-watch-api.git and https://github.com/MMcClure11/nature-watch-client.git.
 
-License
+--- 
+
+### License
+
 Distributed under the MIT License. https://opensource.org/licenses/MIT
 
 Acknowledgements
