@@ -1,22 +1,31 @@
 # Nature Watch
-Overview
-<a name="abcd"></a>
-About The Project
-Getting Started
-Prerequisites
-Installation
-[Installation](#bundle-install)
-Contributing
-License
-Acknowledgements
-About the Project
+___
+
+
+## Overview
+---
+
+* About The Project
+* Getting Started
+* Prerequisites
+* Installation
+* Contributing
+* License
+* Acknowledgements
+
+---
+
+
+### **About the Project**
 Nature Watch is SPA that allows users to create entries of sightings of Flora and Fauna they have seen in nature. See the backend here. This is the React-Redux front end.
 
 Watch the demo here.
 
 Check out the live site here.
 
-Getting Started
+---
+
+### Getting Started
 Make sure you have the following tools installed on your system:
 
 
@@ -76,9 +85,12 @@ Open http://localhost:3000 to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
-[link text](#abcd)
+
 
 Learn More
 You can learn more in the Create React App documentation.
 
 To learn React, check out the React documentation.
+
+<a name="abcd"></a>
+[link text](#abcd)
