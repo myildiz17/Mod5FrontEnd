@@ -3,15 +3,15 @@ ___
 
 * [About The Project](#1)
 * [Getting Started](#2)
-* Prerequisites
-* Installation
-* Contributing
-* License
-* Acknowledgements
+* [Prerequisites](#3)
+* [Installation](#4)
+* [Contributing](#5)
+* [License](#6)
+* [Acknowledgements](#7)
 
 ---
-[link text](#abcd)
 
+<a name="1"></a>
 ### About the Project 
 Gradebook isa school web site with an embedded database, where teachers can create assignments and enter grade for each student. 
 
@@ -26,7 +26,7 @@ Check the onlkine live site.
 
 
 ---
-
+<a name="2"></a>
 ### Getting Started
 Make sure you have the following tools installed on your system:
 
@@ -37,6 +37,7 @@ Make sure you have the following tools installed on your system:
 * React 17.10.4
 
 --- 
+<a name="3"></a>
 ### Prerequisites
 Make sure to install all necessary programs and create the database
 
@@ -46,9 +47,9 @@ rails db:create<br/>
 rails db:migrate<br/>
 
 --- 
-
+<a name="4"></a>
 ### Installation 
-<a name="1"></a>
+
 Create a folder and clone forntend and backend repos into it:<br/>
 
 git clone https://github.com/myildiz17/Mod5FrontEnd<br/>
@@ -66,19 +67,19 @@ npm install<br/>
 npm start<br/>
 
 ---
-<a name="2"></a>
+<a name="5"></a>
 ### Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 
 --- 
-
+<a name="6"></a>
 ### License
 
 Distributed under the MIT License. https://opensource.org/licenses/MIT
 
 ---
-
+<a name="7"></a>
 ### Acknowledgements
 Flatiron School
 
