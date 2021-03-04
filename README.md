@@ -19,7 +19,7 @@ Backend is created with Ruby on Rails. Click to see the [backend](https://github
 
 [Frontend](https://github.com/myildiz17/Mod5FrontEnd) is designed in JS React-Redux. 
 
-Watch the [demo](https://youtu.be/-gECARO9lUU).
+Watch the [demo](https://youtu.be/bidV8GF9hpM).
 
 Check the live [site](https://schoolgb.herokuapp.com/about).
 
