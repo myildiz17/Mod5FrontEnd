@@ -9,21 +9,18 @@ import { currentUser } from "../actions/auth";
 import { Card, Button, Table } from "react-bootstrap";
 import imgc from "../img/myildiz.jpg";
 
-// import { fetchStudents } from '../actions/index.js'
-
 class StudentView extends React.Component {
-
   constructor() {
     super();
     this.state = {
       aName: "",
-      loading: true
+      loading: true,
     };
   }
 
   componentDidMount() {
     const token = localStorage.getItem("my_app_token");
-    // debugger
+
     if (!token) {
       this.props.history.push("/login");
     } else {
@@ -45,7 +42,6 @@ class StudentView extends React.Component {
       .then((res) => res.json())
       .then((grades) => {
         this.props.fetchGrades(grades);
-        // debugger
       });
 
     fetch("http://gradesbook.herokuapp.com/assignments")
@@ -53,42 +49,27 @@ class StudentView extends React.Component {
       .then((assignments) => {
         this.props.fetchAssignments(assignments);
         const assignmentId = parseInt(this.props.match.params.id);
-      const assignmentNeeded = assignments.find(
-        (a) => a.id === assignmentId
-      );
-  
-      this.setState({
-        aName: assignmentNeeded.name,
-        loading: false
+        const assignmentNeeded = assignments.find((a) => a.id === assignmentId);
 
-
-      })
+        this.setState({
+          aName: assignmentNeeded.name,
+          loading: false,
+        });
       });
-
-      
   }
 
   renderGrades = () => {
-    // console.log(this.props.assignments)
-
-    // debugger
     const assignmentId = parseInt(this.props.match.params.id);
-    // debugger
 
     const assignmentNeeded = this.props.assignments.find(
       (a) => a.id === assignmentId
     );
 
-    // this.setState({
-    //   aName: assignmentNeeded.name
-    // })
-
-    // debugger
     if (assignmentNeeded) {
       return assignmentNeeded.grades.map((grade) => {
         return (
           <tr>
-            <td>{grade.student.firstname+" "+grade.student.lastname}</td>
+            <td>{grade.student.firstname + " " + grade.student.lastname}</td>
             <td>{grade.grade.score}</td>
             <td>
               <Link>
@@ -102,7 +83,6 @@ class StudentView extends React.Component {
               </Link>
             </td>
             <td>
-              {/* <td><button class="btn btn-outline-danger"  onClick={()=> {this.handleUpdate(grade.grade.id)}}>Edit</button></td> */}
               <Link classname="item" to={`/grades/${grade.grade.id}/edit`}>
                 <i class="fas fa-twitter" size="sm">
                   Edit
@@ -115,40 +95,22 @@ class StudentView extends React.Component {
     } else {
       return null;
     }
-
-    // debugger
-    //find assignment by the id
-    //map over assignment.grades
-    //for each grade create a new tabel row with a table data of student name and table data of student grade
-    //<tr>
-    //     <td>Student Name</td>
-    //     <td>Student Grade</td>
-    // </tr>
-    // return this.props.assignments.sections.map((section) => {
-    // return <Section key={section.id} section={section} />;
-    // });
   };
 
   handleDelete = (id) => {
-    // debugger
-
     fetch(`http://gradesbook.herokuapp.com/grades/${id}`, { method: "DELETE" })
       .then((res) => res.json())
       .then((grade) => {
-        // debugger
         console.log(grade);
         this.props.deleteGrade([id, this.props.match.params.id]);
-        // this.props.deleteNote(this.props.note.id)
       });
   };
 
   render() {
-    // const noteStyle = {border: '1px solid black', padding: '29%', margin: '15px 100px 15px 100px'}
     return (
       <div class="container">
         <div class="row">
           <div class="col-md-3 teacher">
-           
             <Card style={{ width: "17rem", marginLeft: 0 }}>
               <Card.Img variant="top" src={imgc} />
               <Card.Body>
@@ -160,22 +122,18 @@ class StudentView extends React.Component {
                   <strong>Motto:</strong> "Educating the mind without educating
                   the heart is no education at all"
                 </Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
               </Card.Body>
             </Card>
           </div>
           <div class="col-md-9 sections">
-          {/* { this.state.loading ? <h4>loading ..</h4> 
-          :   */}
             <div>
               <Table>
-                <tr><strong>Assignment Name:  </strong> {this.state.aName}</tr>
+                <tr>
+                  <strong>Assignment Name: </strong> {this.state.aName}
+                </tr>
               </Table>
               <Table responsive="md" bordered>
                 <thead class="tableaHeadAssignment">
-                  {/* <tr>
-                    <th class="tablehead">Sections</th>
-                  </tr> */}
                   <tr>
                     <td class="tablehead">Student Name </td>
                     <td class="tablehead">Grade</td>
@@ -187,25 +145,10 @@ class StudentView extends React.Component {
                   {this.props.assignments ? this.renderGrades() : null}
                 </tbody>
               </Table>
-              {/* <div className="items">
-                {this.props.auth ? this.rendersections() : null}
-              </div> */}
             </div>
-            {/* // } */}
           </div>
         </div>
       </div>
-      // <div>
-      //   <div>
-      //     <table>
-      //       <tr>
-      //         <th>Student Name</th>
-      //         <th>Grade</th>
-      //       </tr>
-      //       {this.props.assignments ? this.renderGrades() : null}
-      //     </table>
-      //   </div>
-      // </div>
     );
   }
 }
@@ -224,7 +167,6 @@ const mapDispatchToProps = {
   fetchGrades: fetchGrades,
   fetchAssignments: fetchAssignments,
   currentUser: currentUser,
-  // handleView: handleView
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StudentView);

@@ -30,7 +30,7 @@ export const deleteGrade = (id) => {
 }
 
 export const updateGrade = (updatedGrade) => {
-    // debugger
+    
     return {
         type: "UPDATE_GRADE",
         updatedGrade: updatedGrade
@@ -38,7 +38,7 @@ export const updateGrade = (updatedGrade) => {
 }
 
 export const updateAssignments = (updatedAssignment) => {
-    // debugger
+    
     return {
         type: "UPDATE_ASSIGNMENTS",
         updatedAssignment: updatedAssignment
@@ -54,7 +54,7 @@ export const addAssignment = (newAssignment) => {
 }
 
 export const deleteAssignment = (id) => {
-    // debugger
+    
     return {
         type: "DELETE_ASSIGNMENT",
         id: id

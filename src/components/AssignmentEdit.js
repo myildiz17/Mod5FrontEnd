@@ -18,7 +18,7 @@ class Edit extends React.Component {
 
   componentDidMount() {
     const token = localStorage.getItem("my_app_token");
-    // debugger
+
     if (!token) {
       this.props.history.push("/login");
     } else {
@@ -36,19 +36,12 @@ class Edit extends React.Component {
         });
     }
 
-    // debugger
     const assignmentId = parseInt(this.props.match.url.split("/")[2]);
     const assignmentToEdit = this.props.assignments.filter(
       (a) => a.id === assignmentId
     );
     const assignmentName = assignmentToEdit[0].name;
 
-    // const studentLname = gradeToEdit[0].student.lastname
-    // const fullName = studentFname + " " + studentLname
-    // const assignmentName = gradeToEdit[0].assignment.name
-    // const score = gradeToEdit[0].score
-
-    // debugger
     this.setState({
       id: assignmentId,
       name: assignmentName,
@@ -56,8 +49,6 @@ class Edit extends React.Component {
   }
 
   handleChange = (e) => {
-    // e.preventDefault()
-    // debugger
     this.setState({
       ...this.state,
       name: e.target.value,
@@ -66,64 +57,52 @@ class Edit extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // debugger
+
     const reqObj = {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(
-        // this.state
-        {
-          name: this.state.name,
-        }
-      ),
+      body: JSON.stringify({
+        name: this.state.name,
+      }),
     };
 
-    fetch(`http://gradesbook.herokuapp.com/assignments/${this.state.id}`, reqObj)
+    fetch(
+      `http://gradesbook.herokuapp.com/assignments/${this.state.id}`,
+      reqObj
+    )
       .then((resp) => resp.json())
       .then((updatedAssignment) => {
         console.log(updatedAssignment);
-        //   debugger
-        // this.props.updateGrade(updatedGrade)
-        // this.props.updateAssignments(updatedAssignment)
-
-        // this.setState({
-        //   title: '',
-        //   content: '',
-        //   // user_id: null,
-        //   // id: null,
-        // })
 
         this.props.history.goBack();
       });
   };
 
   render() {
-    //  debugger
     return (
       <header id="edit-section">
         {this.state.id ? (
           <div class="edit-backg">
             <div class="forms">
               <form class="input-group" onSubmit={this.handleSubmit}>
-                
                 <Form.Label column="lg" lg={3}>
-                Assignment: 
+                  Assignment:
                 </Form.Label>
                 <Col>
-                <input
-                  class="form-control"
-                  type="text"
-                  name="score"
-                  onChange={this.handleChange}
-                  value={this.state.name}
-                  placeholder=""
-                />
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="score"
+                    onChange={this.handleChange}
+                    value={this.state.name}
+                    placeholder=""
+                  />
                 </Col>
-                
-               <div>
-                <input className="btn btn-sm btn-primary" type="submit" />
+
+                <div>
+                  <input className="btn btn-sm btn-primary" type="submit" />
                 </div>
               </form>
             </div>

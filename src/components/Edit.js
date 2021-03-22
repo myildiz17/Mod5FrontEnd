@@ -20,7 +20,7 @@ class Edit extends React.Component {
 
   componentDidMount() {
     const token = localStorage.getItem("my_app_token");
-    // debugger
+
     if (!token) {
       this.props.history.push("/login");
     } else {
@@ -38,7 +38,6 @@ class Edit extends React.Component {
         });
     }
 
-    // debugger
     const gradeIdToEdit = parseInt(this.props.match.params.id);
     const gradeToEdit = this.props.grades.filter((g) => g.id === gradeIdToEdit);
     const studentFname = gradeToEdit[0].student.firstname;
@@ -47,7 +46,6 @@ class Edit extends React.Component {
     const assignmentName = gradeToEdit[0].assignment.name;
     const score = gradeToEdit[0].score;
 
-    // debugger
     this.setState({
       id: gradeIdToEdit,
       score: score,
@@ -57,8 +55,6 @@ class Edit extends React.Component {
   }
 
   handleChange = (e) => {
-    // e.preventDefault()
-    // debugger
     this.setState({
       ...this.state,
       [e.target.name]: e.target.value,
@@ -67,40 +63,30 @@ class Edit extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // debugger
+
     const reqObj = {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(
-        // this.state
-        {
-          score: this.state.score,
-        }
-      ),
+      body: JSON.stringify({
+        score: this.state.score,
+      }),
     };
 
-    fetch(`http://gradesbook.herokuapp.com/grades/${this.props.match.params.id}`, reqObj)
+    fetch(
+      `http://gradesbook.herokuapp.com/grades/${this.props.match.params.id}`,
+      reqObj
+    )
       .then((resp) => resp.json())
       .then((updatedGrade) => {
-        //   debugger
-        // this.props.updateGrade(updatedGrade)
         this.props.updateAssignments(updatedGrade);
-
-        // this.setState({
-        //   title: '',
-        //   content: '',
-        //   // user_id: null,
-        //   // id: null,
-        // })
 
         this.props.history.goBack();
       });
   };
 
   render() {
-    //  debugger
     return (
       <header id="edit-section">
         <div class="edit-backg">

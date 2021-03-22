@@ -12,14 +12,23 @@ import emailjs from "emailjs-com";
 class About extends React.Component {
   sendEmail = (e) => {
     e.preventDefault();
-// debugger
-    emailjs.sendForm('service_dqyips9', 'template_83udi88', e.target, 'user_m5Gk1KYwOLPEE4qKil1I2')
-      .then((result) => {
+
+    emailjs
+      .sendForm(
+        "service_dqyips9",
+        "template_83udi88",
+        e.target,
+        "user_m5Gk1KYwOLPEE4qKil1I2"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
-      e.target.reset()
+        }
+      );
+    e.target.reset();
   };
 
   render() {
@@ -37,7 +46,7 @@ class About extends React.Component {
                   <p>
                     {" "}
                     Pleae visit the school for more information and open house
-                    dates. 
+                    dates.
                   </p>
                   <h4>Address</h4>
                   <p>255 Western Ave, Chicago IL</p>
@@ -55,25 +64,6 @@ class About extends React.Component {
                       Please fill out this form to contact us
                     </h3>
                     <hr></hr>
-                    {/* <div class="container">
-                      <form onSubmit={this.sendEmail}>
-                        <div class="col-md-6 form-group mx-auto">
-                          <input type="text" class="form-control" placeholder="Name" name="name"/>
-                        </div> 
-                        <div class="col-md-6 form-group mx-auto">
-                          <input type="text" class="form-control" placeholder="Email Address" name="email"/>
-                        </div> 
-                        <div class="col-md-6 form-group mx-auto">
-                          <input type="text" class="form-control" placeholder="Subject" name="subject"/>
-                        </div> 
-                        <div class="col-md-6 form-group mx-auto">
-                          <textarea  class="form-control" placeholder="Your message" name="message"></textarea>
-                        </div> 
-                        <div class="col-md-6 mx-auto">
-                          <input type="submit" class="btn btn-info" value="Send Message"></input>
-                        </div> 
-                      </form>
-                    </div> */}
 
                     <form onSubmit={this.sendEmail}>
                       <div class="row">
@@ -146,41 +136,53 @@ class About extends React.Component {
           </div>
         </section>
 
-        {/* Staff */}
         <section id="staff" class="py-5 text-center bg-dark text-white">
           <div class="container">
-            {/* <h1>Main Office</h1>
-            <hr></hr> */}
             <div class="row">
               <div class="col-md-3">
-                <img src={person3} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <img
+                  src={person3}
+                  alt=""
+                  class="img-fluid rounded-circle mb-2"
+                ></img>
                 <h4>Tom Dee</h4>
                 <small>Director</small>
                 <hr></hr>
                 <small>dee@horizon.org</small>
               </div>
               <div class="col-md-3">
-                <img src={person2} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <img
+                  src={person2}
+                  alt=""
+                  class="img-fluid rounded-circle mb-2"
+                ></img>
                 <h4>Mary Lee</h4>
                 <small>Assistant Director</small>
                 <hr></hr>
                 <small>lee@horizon.org</small>
               </div>
               <div class="col-md-3">
-                <img src={person4} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <img
+                  src={person4}
+                  alt=""
+                  class="img-fluid rounded-circle mb-2"
+                ></img>
                 <h4>Robert Hick</h4>
                 <small>Dean of Student</small>
                 <hr></hr>
                 <small>hick@horizon.org</small>
               </div>
               <div class="col-md-3">
-                <img src={person1} alt="" class="img-fluid rounded-circle mb-2"></img>
+                <img
+                  src={person1}
+                  alt=""
+                  class="img-fluid rounded-circle mb-2"
+                ></img>
                 <h4>Jone Globe</h4>
                 <small>Secretary</small>
                 <hr></hr>
                 <small>globe@horizon.org</small>
               </div>
-
             </div>
           </div>
         </section>
@@ -188,7 +190,6 @@ class About extends React.Component {
     );
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

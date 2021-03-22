@@ -15,31 +15,10 @@ import AssignmentEdit from './components/AssignmentEdit';
 import { connect } from 'react-redux'
 import { currentUser } from './actions/auth'
 import { Route, Switch, withRouter } from 'react-router-dom'
-// import { connect } from 'react-redux'
+
 
 class App extends React.Component {
 
-//   componentDidMount(){
-//     const token = localStorage.getItem('my_app_token')
-
-//     if (!token){
-//         this.props.history.push('/login')
-//     } else {
-
-//       const reqObj = {
-//           method: 'GET',
-//           headers: {
-//               Authorization: `Bearer ${token}`
-//           }
-//       }
-
-//       fetch('http://localhost:3000/current_user', reqObj) 
-//       .then(resp => resp.json())
-//       .then(data => {    
-//            this.props.currentUser(data)
-//           })
-//     }
-// }
 
   render(){
     return (
